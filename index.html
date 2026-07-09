@@ -666,7 +666,7 @@
     </div>
     <div class="form-full" id="talles-container"></div>
     <div class="submit-row">
-      <button class="btn-main" onclick="enviarInscripcio()">Confirmar inscripció</button>
+      <button class="btn-main" id="btn-inscripcio" onclick="enviarInscripcio()">Confirmar inscripció</button>
       <span class="submit-note">Rebràs un correu de confirmació en 24h</span>
     </div>
   </div>
@@ -849,7 +849,12 @@ async function enviarInscripcio() {
     talles:      talles.join(', '),
     categoria:   categoria
   };
+  const btn = document.getElementById('btn-inscripcio');
+  btn.textContent = '⏳ Enviant...';
+  btn.disabled = true;
   await fetch(url, { method: 'POST', body: JSON.stringify(dades), mode: 'no-cors' });
+  btn.textContent = 'Confirmar inscripció';
+  btn.disabled = false;
   mostrarModal(true, 'INSCRIPCIÓ ENVIADA', 'Gràcies! Rebràs un correu de confirmació en 24h.');
   carregarComptador();
 }
