@@ -578,18 +578,6 @@ document.addEventListener('DOMContentLoaded', () => {
     headings: ['Dies', 'Hores', 'Minuts', 'Segons']
   }).start();
 
-  // ANIMACIÓ SORPRESA
-  const secretStop = document.querySelector('.route-stop-secret');
-  if (secretStop) {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          secretStop.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.3, rootMargin: '0px 0px -50px 0px' });
-    observer.observe(secretStop);
-  }
 });
 
 function switchTab(tab, btn) {
@@ -598,6 +586,16 @@ function switchTab(tab, btn) {
   document.querySelectorAll('.photo-panel').forEach(p => p.classList.add('hidden'));
   document.getElementById(tab).classList.remove('hidden');
 }
+
+// ANIMACIÓ SORPRESA
+window.addEventListener('scroll', function() {
+  const secretStop = document.querySelector('.route-stop-secret');
+  if (!secretStop) return;
+  const rect = secretStop.getBoundingClientRect();
+  if (rect.top < window.innerHeight * 0.8) {
+    secretStop.classList.add('visible');
+  }
+}, { passive: true });
 </script>
 </body>
 </html>
