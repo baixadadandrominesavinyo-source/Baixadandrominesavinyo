@@ -1,5 +1,3 @@
-
-Contacte · HTML
 <!DOCTYPE html>
 <html lang="ca">
 <head>
@@ -24,11 +22,11 @@ Contacte · HTML
     --font-display: 'Bebas Neue', sans-serif;
     --font-body: 'DM Sans', sans-serif;
   }
- 
+
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
   body { font-family: var(--font-body); background: var(--dark); color: var(--light); overflow-x: hidden; }
- 
+
   /* NAV */
   nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
@@ -50,7 +48,7 @@ Contacte · HTML
   .nav-mobile.open { display: flex; }
   .nav-mobile a { color: var(--light); text-decoration: none; font-size: 1.1rem; font-weight: 300; letter-spacing: 1px; text-transform: uppercase; opacity: 0.8; padding: 0.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
   .nav-mobile a:last-child { border-bottom: none; }
- 
+
   /* HERO AMB FOTO */
   .hero-foto {
     position: relative;
@@ -78,7 +76,7 @@ Contacte · HTML
   .section-eyebrow { font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase; color: var(--orange); margin-bottom: 1rem; }
   .hero-title { font-family: var(--font-display); font-size: clamp(3.5rem, 10vw, 7rem); line-height: 0.9; letter-spacing: 2px; }
   .hero-title span { color: var(--orange); }
- 
+
   /* CONTINGUT */
   .content-grid {
     display: grid;
@@ -88,12 +86,32 @@ Contacte · HTML
     max-width: 1200px;
     margin: 0 auto;
   }
- 
+
   /* QUI SOM */
   .qui-som h2 { font-family: var(--font-display); font-size: 1.2rem; letter-spacing: 2px; color: var(--orange); margin-bottom: 2rem; }
   .qui-som p { font-size: 1rem; line-height: 1.9; color: rgba(245,242,236,0.75); margin-bottom: 1.5rem; }
   .qui-som p:last-child { margin-bottom: 0; }
- 
+
+  /* CONTACTE */
+  .contacte-bloc h2 { font-family: var(--font-display); font-size: 1.2rem; letter-spacing: 2px; color: var(--orange); margin-bottom: 2rem; }
+  .correu-box {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem;
+    background: var(--dark3);
+    border: 1px solid rgba(255,90,0,0.2);
+    border-radius: 4px;
+    margin-bottom: 2rem;
+    text-decoration: none;
+    color: var(--light);
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .correu-box:hover { border-color: var(--orange); background: rgba(255,90,0,0.06); }
+  .correu-icon { font-size: 1.5rem; }
+  .correu-label { font-size: 0.7rem; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gray); margin-bottom: 4px; }
+  .correu-val { font-size: 0.95rem; font-weight: 500; }
+
   /* FORMULARI */
   .form-title { font-family: var(--font-display); font-size: 2rem; margin-bottom: 1.5rem; }
   .form-field { display: flex; flex-direction: column; gap: 6px; margin-bottom: 1rem; }
@@ -103,7 +121,7 @@ Contacte · HTML
   .form-field textarea { resize: vertical; min-height: 120px; }
   .btn-main { background: var(--orange); color: white; padding: 14px 36px; font-family: var(--font-body); font-size: 0.9rem; font-weight: 500; border: none; border-radius: 2px; cursor: pointer; transition: background 0.2s; width: 100%; margin-top: 0.5rem; }
   .btn-main:hover { background: var(--orange-light); }
- 
+
   /* MODAL */
   .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.7); z-index: 999; display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: opacity 0.3s; }
   .modal-overlay.show { opacity: 1; pointer-events: all; }
@@ -112,12 +130,12 @@ Contacte · HTML
   .modal-title { font-family: var(--font-display); font-size: 1.8rem; margin-bottom: 0.5rem; color: var(--color); }
   .modal-text { font-size: 0.9rem; color: var(--gray); margin-bottom: 1.5rem; line-height: 1.6; }
   .modal-btn { background: var(--color); color: white; border: none; padding: 10px 28px; border-radius: 2px; cursor: pointer; font-family: var(--font-body); font-size: 0.9rem; }
- 
+
   /* FOOTER */
   footer { background: var(--dark); border-top: 1px solid rgba(255,90,0,0.15); padding: 2rem 3rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
   .footer-logo { font-family: var(--font-display); font-size: 1.4rem; color: var(--orange); letter-spacing: 2px; }
   .footer-text { font-size: 0.8rem; color: var(--gray); }
- 
+
   /* MÒBIL */
   @media (max-width: 768px) {
     nav { padding: 1rem 1.5rem; }
@@ -131,7 +149,7 @@ Contacte · HTML
 </style>
 </head>
 <body>
- 
+
 <!-- NAV -->
 <nav>
   <a href="index.html" class="nav-logo">ANDRÒMINES AVINYÓ</a>
@@ -140,12 +158,12 @@ Contacte · HTML
     <span></span><span></span><span></span>
   </button>
 </nav>
- 
+
 <!-- MENÚ MÒBIL -->
 <nav class="nav-mobile" id="nav-mobile">
   <a href="index.html" onclick="toggleMenu()">← Tornar a l'inici</a>
 </nav>
- 
+
 <!-- HERO AMB FOTO -->
 <div class="hero-foto">
   <div class="hero-foto-img"></div>
@@ -155,10 +173,10 @@ Contacte · HTML
     <h1 class="hero-title">QUI<br>SOM<br><span>NOSALTRES</span></h1>
   </div>
 </div>
- 
+
 <!-- CONTINGUT -->
 <div class="content-grid">
- 
+
   <!-- QUI SOM -->
   <div class="qui-som">
     <h2>LA NOSTRA HISTÒRIA</h2>
@@ -166,7 +184,7 @@ Contacte · HTML
     <p>Amb l'ajuda de l'Ajuntament d'Avinyó i moltes ganes, hem aconseguit posar en marxa de nou aquesta festa on l'enginy, la creativitat i el bon humor són els protagonistes.</p>
     <p>La Baixada d'Andròmines és més que una cursa — és una excusa per reunir el poble, divertir-se i demostrar que amb imaginació i treball en equip es poden fer coses molt xules.</p>
   </div>
- 
+
   <!-- CONTACTE -->
   <div class="contacte-bloc">
     <h2>CONTACTE</h2>
@@ -181,9 +199,9 @@ Contacte · HTML
     </div>
     <button class="btn-main" id="btn-contacte" onclick="enviarMissatge()">Enviar missatge</button>
   </div>
- 
+
 </div>
- 
+
 <!-- MODAL -->
 <div class="modal-overlay" id="modal">
   <div class="modal-box" id="modal-box">
@@ -193,25 +211,25 @@ Contacte · HTML
     <button class="modal-btn" onclick="tancarModal()">D'acord</button>
   </div>
 </div>
- 
+
 <!-- FOOTER -->
 <footer>
   <div class="footer-logo">ANDRÒMINES 2026</div>
   <div class="footer-text">© 2026 Baixada d'Andròmines · Avinyó · Tots els drets reservats</div>
   <div class="footer-text">Dissenyat amb 🔧 i passió</div>
 </footer>
- 
+
 <script>
 function toggleMenu() {
   document.getElementById('hamburger').classList.toggle('open');
   document.getElementById('nav-mobile').classList.toggle('open');
 }
- 
+
 function enviarMissatge() {
   const nom = document.getElementById('nom').value.trim();
   const correu = document.getElementById('correu').value.trim();
   const missatge = document.getElementById('missatge').value.trim();
- 
+
   if (!nom || !correu || !missatge) {
     mostrarModal(false, 'FALTEN DADES', 'Si us plau, omple tots els camps.');
     return;
@@ -220,12 +238,12 @@ function enviarMissatge() {
     mostrarModal(false, 'CORREU INCORRECTE', 'El correu electrònic ha de contenir @.');
     return;
   }
- 
+
   const mailto = `mailto:baixadadandrominesavinyo@gmail.com?subject=Missatge de ${encodeURIComponent(nom)}&body=${encodeURIComponent(missatge)}%0A%0A--- ${encodeURIComponent(nom)} (${encodeURIComponent(correu)})`;
   window.location.href = mailto;
   mostrarModal(true, 'GRÀCIES!', 'S\'obrirà el teu correu per enviar el missatge. Ens posarem en contacte aviat!');
 }
- 
+
 function mostrarModal(exit, titol, text) {
   const color = exit ? '#22c55e' : '#ef4444';
   const icon = exit ? '✅' : '❌';
@@ -235,7 +253,7 @@ function mostrarModal(exit, titol, text) {
   document.getElementById('modal-text').textContent = text;
   document.getElementById('modal').classList.add('show');
 }
- 
+
 function tancarModal() {
   document.getElementById('modal').classList.remove('show');
 }
